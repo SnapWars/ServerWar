@@ -6,7 +6,11 @@ module.exports = new SnapchatStrategy({
     callbackURL: "http://localhost:3000/auth/snapchat/callback",
     profileFields: ['id', 'displayName', 'bitmoji']
   },
-  async (accessToken, refreshToken, profile, cb) => {
-    // TODO: Process tokens & profile
+  async (accessToken, refreshToken, profile, done) => {
+    const tokens = {
+      accessToken: accessToken,
+      refreshToken: refreshToken
+    };
+    done(null, tokens);
   }
 );
