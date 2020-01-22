@@ -9,7 +9,7 @@ function successHandler(req, res) {
 };
 
 function errorHandler(er, req, res, next) {
-    console.log('Failed to authenticate');
+    throw new Error('Failed to authenticate');
 }
 
 passport.use(snapchatStrategy);
